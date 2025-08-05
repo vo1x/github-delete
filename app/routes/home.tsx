@@ -183,10 +183,24 @@ export default function Home({
       <main className="flex-1 w-full max-w-2xl mx-auto px-4 pt-8">
         <Form
           method="post"
-          className="flex flex-col sm:flex-row gap-3 items-start mb-8"
+          className="flex flex-col gap-3 items-stretch mb-8 w-full max-w-xl"
         >
           <input type="hidden" name="intent" value="fetch" />
-          <div className="flex flex-col flex-1 min-w-0">
+          <div className="flex flex-col gap-2 w-full">
+            <span className="text-sm text-gray-700">
+              You’ll need a <b>access token</b> to use this app.{" "}
+              <a
+                href="https://github.com/settings/tokens/new?scopes=delete_repo,repo&description=GitHub%20Delete"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline text-black font-medium"
+              >
+                Generate one here
+              </a>
+              .<br />
+              The token needs <code>repo</code> and <code>delete_repo</code>{" "}
+              permissions.
+            </span>
             <input
               type="password"
               name="token"
@@ -203,7 +217,7 @@ export default function Home({
           <button
             type="submit"
             disabled={isSubmitting && submitIntent === "fetch"}
-            className="sm:w-36 w-full px-6 py-2 border border-black rounded-none bg-black text-white font-semibold hover:bg-slate-50 hover:text-black transition disabled:opacity-50"
+            className="w-full sm:w-36 px-6 py-2 border border-black rounded-none bg-black text-white font-semibold hover:bg-slate-50 hover:text-black transition disabled:opacity-50 self-end"
             style={{ minHeight: "44px" }}
           >
             {isSubmitting && submitIntent === "fetch" ? "Loading..." : "Fetch"}

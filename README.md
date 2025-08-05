@@ -33,7 +33,7 @@ The app runs on [http://localhost:3000](http://localhost:3000) by default.
 ## Usage
 
 1. **Create a GitHub PAT** (Personal Access Token) with `repo` scope:  
-   [Create token here](https://github.com/settings/tokens?type=beta)
+   [Create token here](https://github.com/settings/tokens/new?scopes=delete_repo,repo&description=GitHub%20Delete)
 2. **Paste the token** into the input box.
 3. **View** your repositories.
 4. **Select** repos to delete (single or bulk).
